@@ -223,11 +223,12 @@ used; \code{"mle"} when maximum likelihood method is used. The default is \code{
 
  The method \code{lba.ls.fe} and \code{lba.mle.fe} returns a list of class \code{lba.ls.fe} and \code{lba.mle.fe} respectively with the slots:
 
- \item{P}{The compositional data matrix which is formed by dividing the raw data matrix by their corresponding total, its rows are called observed budgets.}
+ \item{P}{The compositional data matrix which is formed by dividing the raw data matrix by their corresponding row total, its rows are called observed budgets.}
  \item{pij}{Matrix whose rows are the expected budgets.}
  \item{residual}{Residual matrix \code{P - pij.}}
  \item{A}{(I x K) matrix of the unidentified the mixing parameters.}
  \item{B}{(J x K) matrix of the unidentified the latent components.}
+ \item{rescB}{(J x K) matrix of the rescaled latent components.} 
  \item{pk}{Budget proportions.}
  \item{val_func}{Value of least squared or likelihood function achieved.}
  \item{iter_ide}{Number of identified iteractions.}
@@ -239,6 +240,7 @@ used; \code{"mle"} when maximum likelihood method is used. The default is \code{
  \item{residual}{Residual matrix \code{P - pij.}}
  \item{A}{(I x K) matrix of the unidentified the mixing parameters.}
  \item{B}{(J x K) matrix of the unidentified the latent componentes.}
+ \item{rescB}{(J x K) matrix of the rescaled latent components.} 
  \item{pk}{Budget proportions.}
  \item{val_func}{Value of least squared or likelihood function achieved.}
  \item{iter_ide}{Number of identified iterations.}
