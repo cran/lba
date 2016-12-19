@@ -1,2 +1,1 @@
-lba <- function (obj, 
-                 ...) UseMethod('lba')
+lba <- function(obj, ...) UseMethod("lba")

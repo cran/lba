@@ -15,7 +15,6 @@ lba.mle.logit <- function(obj        ,
                           ...)
 {
 
-
  #===========================================================================
  #Multinomial logit on both mixing parameters and latent components
  #===========================================================================
@@ -509,19 +508,19 @@ lba.mle.logit.A <- function(obj       ,
  itmax.opt <- round(.9*itmax.ide)
 
  xab <- constrOptim.nl(par         = x0,
-                       fn          = mw,
-                       cB          = cB,
-                       logitA      = logitA,
-                       obj          = obj,
-                       K           = K,
-                       I           = I,
-                       J           = J,
-                       S           = S,
-                       heq         = heq,
-                       hin         = hin,
-                       control.outer=list(trace=trace.lba,
-                                          itmax=itmax.ala),
-                       control.optim=list(maxit=itmax.opt))
+               fn          = mw,
+               cB          = cB,
+               logitA      = logitA,
+               obj          = obj,
+               K           = K,
+               I           = I,
+               J           = J,
+               S           = S,
+               heq         = heq,
+               hin         = hin,
+               control.outer=list(trace=trace.lba,
+                                  itmax=itmax.ala),
+               control.optim=list(maxit=itmax.opt))
 
  y <- length(xab$par)- (J * K + S * K )
  omsk <- matrix(xab$par[(y+J*K +1):(y+J*K+S*K)], ncol = K)
@@ -805,19 +804,19 @@ lba.mle.logit.B <- function(obj       ,
  itmax.opt <- round(.9*itmax.ide)
 
  xab <- constrOptim.nl(par     = x0,
-                       fn      = mw,
-                       cA      = cA,
-                       logitB  = logitB,
-                       obj      = obj,
-                       K       = K,
-                       I       = I,
-                       J       = J,
-                       T       = T,
-                       heq     = heq,
-                       hin     = hin,
-                       control.outer=list(trace=trace.lba,
-                                          itmax=itmax.ala),
-                       control.optim=list(maxit=itmax.opt))
+               fn      = mw,
+               cA      = cA,
+               logitB  = logitB,
+               obj      = obj,
+               K       = K,
+               I       = I,
+               J       = J,
+               T       = T,
+               heq     = heq,
+               hin     = hin,
+               control.outer=list(trace=trace.lba,
+                                  itmax=itmax.ala),
+               control.optim=list(maxit=itmax.opt))
  # 
  y <- length(xab$par)- (T*K+I*K)
  psitk <- matrix(xab$par[(y+I*K+1):(y+I*K+T*K)], ncol = K)

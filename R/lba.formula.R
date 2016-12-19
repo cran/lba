@@ -34,9 +34,9 @@ lba.formula <- function(formula,
  aux.form <- strsplit(as.character(formula),
                       '~')
 
- var.row <- aux.form[[2]]
+ var.col <- aux.form[[2]] 
 
- var.col <- aux.form[[3]]
+ var.row <- aux.form[[3]]
 
  var.row1 <- unlist(strsplit(var.row,
                              ' \\+ '))
@@ -66,12 +66,16 @@ lba.formula <- function(formula,
  tabs <- do.call('rbind',
                  aux.tables1)
 
- aux.namesR <- ifelse(length(length(var.row1))==1,
-                      sapply(var.row1,
-                             function(x)levels(data[[x]]),
-                             simplify=F),
-                      sapply(var.row1,
-                             function(x)levels(data[[x]])))
+ #  ifelse(length(var.row1)==1,
+ #         aux.namesR <- sapply(var.row1,
+ #                              function(x)levels(data[[x]]),
+ #                              simplify=F),
+ #         aux.namesR <- sapply(var.row1,
+ #                              function(x)levels(data[[x]])))
+
+ aux.namesR <- sapply(var.row1,
+                      function(x)levels(data[[x]]),
+                      simplify=F) 
 
  aux.namesR1 <- sapply(aux.namesR,
                        length)
@@ -182,15 +186,38 @@ lba.formula <- function(formula,
 
   }
 
- cl <- match.call()
+ n_dim <- length(result$pk)-1
 
- result$call <- cl
- result$what <- what
- result$tab <- tabs
+ if(n_dim == 1){
 
- class(result) <- c(class(result),
-                    'lba.formula',
-                    'lba')
+   class(result) <- c('lba.1d',
+                      class(result),
+                      'lba.formula',
+                      'lba')
+ }
 
- invisible(result)
+ if(n_dim == 2){
+
+   class(result) <- c('lba.2d',
+                      class(result),
+                      'lba.formula',
+                      'lba')
+ }
+
+ if(n_dim >= 3){
+
+   class(result) <- c('lba.3d',
+                      class(result),
+                      'lba.formula',
+                      'lba')
+ } 
+
+ cl <- match.call() 
+
+ result$call  <- cl
+ result$what  <- what
+ result$tab   <- tabs
+
+ result
+
 }

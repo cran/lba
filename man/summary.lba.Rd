@@ -1,8 +1,9 @@
 \name{summary.lba}
-\alias{summary.lba}
+\alias{summary.lba.ls}
 \alias{summary.lba.ls.fe}
-\alias{summary.lba.mle.fe}
 \alias{summary.lba.ls.logit}
+\alias{summary.lba.mle}
+\alias{summary.lba.mle.fe}
 \alias{summary.lba.mle.logit}
 
 \title{
@@ -10,17 +11,27 @@
 }
 
 \description{
-  Returns (and prints) a summary list for objects of class \code{lba}, \code{lba.ls.fe}, \code{lba.mle.fe}, \code{lba.ls.logit} and \code{lba.mle.logit}.
+  Returns (and prints) a summary list for objects of class \code{lba}, \code{lba.ls.fe}, \code{lba.ls.logit}, \code{lba.mle}, \code{lba.mle.fe}, and \code{lba.mle.logit}.
 }
 
 \usage{
-\method{summary}{lba}(object, digits = 2L, ...)
+\method{summary}{lba.ls}(object, digits = 2L, \dots)
+
+\method{summary}{lba.ls.fe}(object, digits = 2L, \dots) 
+
+\method{summary}{lba.ls.logit}(object, digits = 2L, \dots)  
+
+\method{summary}{lba.mle}(object, digits = 2L, \dots)   
+
+\method{summary}{lba.mle.fe}(object, digits = 2L, \dots)    
+
+\method{summary}{lba.mle.logit}(object, digits = 2L, \dots)     
 }
 
 \arguments{
   \item{object}{A given object of the class \code{lba}, \code{lba.ls.fe}, \code{lba.mle.fe}, \code{lba.ls.logit} and \code{lba.mle.logit}.}
-  \item{digits}{Number of decimal digits in the results.}      
-  \item{\dots }{Potential further arguments (require by generic).}
+  \item{digits}{Number of decimal digits in the results.The default is 2.}      
+  \item{\dots }{Further arguments (require by generic).}
 }
 
 \author{

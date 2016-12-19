@@ -2,18 +2,29 @@
 # Remove the previous line if you edit this file
 
 # Export all names
-exportPattern(".")
+# exportPattern(".")
 
 # Import all packages listed as Imports or Depends
 import(
  MASS,
  alabama,
  plotrix,
- ca
+ scatterplot3d,
+ utils,
+ stats,
+ graphics
 )
 
+importFrom("grDevices", "rgb")
+importFrom("rgl", "plot3d")
+importFrom("rgl", "pch3d")
+importFrom("rgl", "text3d")
+  
+export(lba, goodnessfit)
+export(lba, plotlba)
+export(lba, plotcorr)
+
 # S3 methods
-S3method(lba, default) 
 S3method(lba, formula)
 S3method(lba, matrix)
 S3method(lba, table)
@@ -26,10 +37,43 @@ S3method(lba, mle.logit)
 S3method(lba, mle.logit.A)
 S3method(lba, mle.logit.B)
 S3method(lba, mle.logit.AB)
-S3method(plot, lba)
-S3method(print, goodnessfit)
-S3method(summary, lba)
+
+S3method(goodnessfit, lba.ls)
+S3method(goodnessfit, lba.ls.fe)
+S3method(goodnessfit, lba.ls.logit)
+S3method(goodnessfit, lba.mle)
+S3method(goodnessfit, lba.mle.fe)
+S3method(goodnessfit, lba.mle.logit)
+
+S3method(plotlba, lba.1d)
+S3method(plotlba, lba.2d)
+S3method(plotcorr, lba.1d)
+S3method(plotcorr, lba.2d)
+S3method(plotcorr, lba.3d)
+
+S3method(print, goodnessfit.lba.ls)
+S3method(print, goodnessfit.lba.ls.fe)
+S3method(print, goodnessfit.lba.ls.logit)
+S3method(print, goodnessfit.lba.mle)
+S3method(print, goodnessfit.lba.mle.fe)
+S3method(print, goodnessfit.lba.mle.logit)
+
+S3method(print, lba.ls)
+S3method(print, lba.ls.fe)
+S3method(print, lba.ls.logit)
+S3method(print, lba.mle)
+S3method(print, lba.mle.fe)
+S3method(print, lba.mle.logit)
+
+S3method(summary, goodnessfit.lba.ls)
+S3method(summary, goodnessfit.lba.ls.fe)
+S3method(summary, goodnessfit.lba.ls.logit)
+S3method(summary, goodnessfit.lba.mle)
+S3method(summary, goodnessfit.lba.mle.fe)
+S3method(summary, goodnessfit.lba.mle.logit)
+S3method(summary, lba.ls)
 S3method(summary, lba.ls.fe)
 S3method(summary, lba.ls.logit)
+S3method(summary, lba.mle)
 S3method(summary, lba.mle.fe)
 S3method(summary, lba.mle.logit)
