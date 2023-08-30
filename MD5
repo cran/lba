@@ -1,5 +1,5 @@
-ae3524e17c99fe71eb0b4f4747f4c6d9 *ChangeLog
-8d904fcfed8a87f6d5d24d5db550be7c *DESCRIPTION
+6c067f8bcdc1221fc0442e91cdbfa3b9 *ChangeLog
+3fb53a4ef933da9b64aae33d9ef280f1 *DESCRIPTION
 280e67619416a83ce8bfbf9f27eb2c1e *NAMESPACE
 0cdc893e259798aec5988ac285d01b01 *R/constrainAB.R
 39b3e3420cafa28afd5584b7c479f976 *R/goodnessfit.R
@@ -8,7 +8,7 @@ ae3524e17c99fe71eb0b4f4747f4c6d9 *ChangeLog
 f6adad96612bc7089ddd3a33e41c0d49 *R/goodnessfit.lba.ls.fe.R
 f584445999607062f119345cfdc551a7 *R/goodnessfit.lba.ls.logit.R
 91b7f3c929360abeb5e1467dc1b3d41b *R/goodnessfit.lba.mle.R
-5bb6bcdff67231b031ba603ca3717efc *R/goodnessfit.lba.mle.fe.R
+f2a876d1d3c39d2dc78728b30563c152 *R/goodnessfit.lba.mle.fe.R
 ec42e519f5103ac177d1f2020cf57b82 *R/goodnessfit.lba.mle.logit.R
 fd8b1db0cc1c086ca7ce9d81a41b2525 *R/identif.R
 589a0a732611ef94c2da39b8d0707b47 *R/lba.R
